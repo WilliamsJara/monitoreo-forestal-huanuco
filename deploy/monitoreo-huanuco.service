@@ -1,0 +1,14 @@
+[Unit]
+Description=Monitoreo satelital y alerta temprana - Huánuco (tablero Streamlit)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=__USUARIO__
+WorkingDirectory=/opt/monitoreo-huanuco
+ExecStart=/opt/monitoreo-huanuco/.venv/bin/streamlit run app.py --server.headless true --server.address 127.0.0.1 --server.port 8501 --server.baseUrlPath carpeta --browser.gatherUsageStats false
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

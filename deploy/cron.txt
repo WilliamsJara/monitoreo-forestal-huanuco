@@ -1,0 +1,2 @@
+0 6 * * * cd /opt/monitoreo-huanuco && .venv/bin/python scripts/actualizar.py --dias 7 --cobertura >> logs/actualizar.log 2>&1  # monitoreo-huanuco
+30 6 * * * cd /opt/monitoreo-huanuco && .venv/bin/python scripts/respaldo.py >> logs/respaldo.log 2>&1  # monitoreo-huanuco
